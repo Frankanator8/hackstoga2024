@@ -51,7 +51,8 @@ class Game:
             board, nothit = self.track.tick(dt, self.playerR, self.playerC)
             for r, row in enumerate(board):
                 for c, col in enumerate(row):
-                    self.renderProgs[r][c].rect = pygame.Rect(105+130*r-65*col, 105+130*c-65*col, 130*col, 130*col)
+                    self.renderer.add_renderable(Image(105+130*r-65*col, 105+130*c-65*col, loader.load_image("assets/e/IndustrialTile_68.png", size=(130*col, 130*col)), "fillRect"), "fillRects")
+        #self.renderProgs[r][c].rect = pygame.Rect(105+130*r-65*col, 105+130*c-65*col, 130*col, 130*col)
 
             if nothit:
                 self.score += 1000 * dt

@@ -10,19 +10,22 @@ class Menu:
         self.renderer = renderer
         self.game = game
         self.buttons = [
-            Image(600, 150, loader.load_image("assets/banner.jpg", size=(250, 100)), "banner1"),
-            Image(600, 300, loader.load_image("assets/banner.jpg", size=(250, 100)), "banner2"),
+            Image(600, 150, loader.load_image("assets/e/odo_ado.png", size=(250, 100)), "banner1"),
+            Image(600, 300, loader.load_image("assets/e/just_like_you_nf.jpg", size=(250, 100)), "banner2"),
         ]
-        self.bigdisplay = Image(40, 40, loader.load_image("assets/banner.jpg", size=(520, 520)), "disp")
+        self.bigdisplay = Image(40, 40, loader.load_image("assets/midnightmoves.png", size=(520, 520)), "disp")
+        self.background = Image(0, 0, loader.load_image("assets/e/titlescreen.png", size=(900, 600)), "background")
         self.render()
         self.lastMousePress = False
         self.active = True
 
     def render(self):
+        self.renderer.add_renderable(self.background, "background")
         for but in self.buttons:
             self.renderer.add_renderable(but, but.desc)
 
         self.renderer.add_renderable(self.bigdisplay, "disp")
+        
 
     def unrender(self):
         for but in self.buttons:
