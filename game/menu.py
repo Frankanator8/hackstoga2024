@@ -40,8 +40,7 @@ class Menu:
                 self.game.track = odo
                 self.unrender()
                 self.renderer.delete_renderable("menuBackground")
-                self.background = Image(0, 0, loader.load_image("assets/e/Cartoon_Forest_BG_01.png", size=(900, 600)), "menuBackground")
-                self.renderer.add_renderable(self.background, "menuBackground")
+                self.game.back = Image(0, 0, loader.load_image("assets/e/Cartoon_Forest_BG_01.png", size=(900, 600)), "menuBackground")
                 self.game.render()
 
             if 500 <= mousePos[0] <= 800 and 370 <= mousePos[1] <= 520:
@@ -50,7 +49,7 @@ class Menu:
                 self.unrender()
                 self.game.song = "justlikeyou.mp3"
                 self.renderer.delete_renderable("menuBackground")
-                self.background = Image(0, 0, loader.load_image("assets/e/Cartoon_Forest_BG_01.png", size=(900, 600)), "menuBackground")
+                self.game.back = Image(0, 0, loader.load_image("assets/e/Cartoon_Forest_BG_01.png", size=(900, 600)), "menuBackground")
                 self.renderer.add_renderable(self.background, "menuBackground")
                 self.game.render()
                 
