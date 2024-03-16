@@ -10,10 +10,10 @@ class Menu:
         self.renderer = renderer
         self.game = game
         self.buttons = [
-            Image(600, 150, loader.load_image("assets/e/odo_ado.png", size=(250, 100)), "banner1"),
-            Image(600, 300, loader.load_image("assets/e/just_like_you_nf.jpg", size=(250, 100)), "banner2"),
+            Image(100, 370, loader.load_image("assets/e/odo_ado.png", size=(300, 150)), "banner1"),
+            Image(500, 370, loader.load_image("assets/e/just_like_you_nf.jpg", size=(300, 150)), "banner2"),
         ]
-        self.bigdisplay = Image(40, 40, loader.load_image("assets/midnightmoves.png", size=(520, 520)), "disp")
+        self.bigdisplay = Image(0, 10, loader.load_image("assets/midnightmoves.png", size=(480, 240)), "disp")
         self.background = Image(0, 0, loader.load_image("assets/e/titlescreen.png", size=(900, 600)), "background")
         self.render()
         self.lastMousePress = False
