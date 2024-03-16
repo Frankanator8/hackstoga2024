@@ -36,12 +36,13 @@ def readBlocks(filename):
             lineNum += 1
         # Process each line as needed
             content = line.strip()
-            if lineNum % 5 == 1: // empty
+            if lineNum % 5 == 1: # empty
             blocks.append(curBlock)
             curBlock = []
             curRow = []
             else:
                 curRow = line.split(" ")
+                curBlock.append(curRow)
 
 blocks = readBlocks("justlikeyouBlocks.txt")
 
