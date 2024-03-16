@@ -72,6 +72,11 @@ class Track:
 
             if self.time >= self.timestamps[self.index+1]:
                 self.index += 1
+                if (self.index in self.switchIndices):
+                    if (self.switched):
+                        self.switched = False
+                    else:
+                        self.switched = True
 
         return board, good
 

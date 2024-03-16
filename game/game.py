@@ -33,7 +33,7 @@ class Game:
                 self.renderer.add_renderable(self.renderBoard[r][c], f"board-{r}-{c}")
                 self.renderer.add_renderable(self.renderProgs[r][c], f"prog-{r}-{c}")
 
-        self.renderer.add_renderable(self.playerImg, "player")
+        #self.renderer.add_renderable(self.playerImg, "player")
         pygame.mixer.music.load("assets/" + self.song)
         pygame.mixer.music.play()
 
@@ -51,7 +51,12 @@ class Game:
             board, nothit = self.track.tick(dt, self.playerR, self.playerC)
             for r, row in enumerate(board):
                 for c, col in enumerate(row):
-                    self.renderer.add_renderable(Image(105+130*r-65*col, 105+130*c-65*col, loader.load_image("assets/e/IndustrialTile_68.png", size=(130*col, 130*col)), "fillRect"), "fillRects")
+                    if (self.track.switched):
+                        self.renderer.add_renderable(Image(105+130*r-65*col, 105+130*c-65*col, loader.load_image("assets/e/IndustrialTile_68.png", size=(130*col, 130*col)), "fillRect"), f"prog-{r}-{c}")
+                    else:
+                        self.renderer.add_renderable(Image(105+130*r-65*col, 105+130*c-65*col, loader.load_image("assets/e/Tile_18.png", size=(130*col, 130*col)), "fillRect"), f"prog-{r}-{c}")
+
+        
         #self.renderProgs[r][c].rect = pygame.Rect(105+130*r-65*col, 105+130*c-65*col, 130*col, 130*col)
 
             if nothit:
