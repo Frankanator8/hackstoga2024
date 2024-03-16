@@ -1,5 +1,6 @@
 class Game:
     def __init__(self):
-        pass
+        self.board = []
 
     def tick(self, mousePos, mouseClicked, dt):
+
