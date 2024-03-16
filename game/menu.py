@@ -35,13 +35,13 @@ class Menu:
 
     def tick(self, mousePressed, mousePos):
         if mousePressed and not self.lastMousePress:
-            if 600 <= mousePos[0] <= 850 and 150 <= mousePos[1] <= 250:
+            if 100 <= mousePos[0] <= 400 and 370 <= mousePos[1] <= 520:
                 self.active = False
                 self.game.track = odo
                 self.unrender()
                 self.game.render()
 
-            if 600 <= mousePos[0] <= 850 and 300 <= mousePos[1] <= 400:
+            if 500 <= mousePos[0] <= 800 and 370 <= mousePos[1] <= 520:
                 print("yes")
                 self.active = False
                 self.game.track = game.justlikeyou.getTrack()
