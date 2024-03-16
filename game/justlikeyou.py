@@ -37,9 +37,9 @@ def readBlocks(filename):
         # Process each line as needed
             content = line.strip()
             if lineNum % 5 == 1: # empty
-            blocks.append(curBlock)
-            curBlock = []
-            curRow = []
+                blocks.append(curBlock)
+                curBlock = []
+                curRow = []
             else:
                 curRow = line.split(" ")
                 curBlock.append(curRow)
