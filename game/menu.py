@@ -39,6 +39,7 @@ class Menu:
                 self.game.render()
 
             if 600 <= mousePos[0] <= 850 and 300 <= mousePos[1] <= 400:
+                print("yes")
                 self.active = False
                 self.game.track = justlikeyou
                 self.unrender()
