@@ -11,12 +11,14 @@ class Track:
         self.index = 0
         self.switchIndices = switchIndices
         self.day = True
+        self.switched = False
 
     def reset(self):
         self.time = 0
         self.done = False
         self.index = 0
         self.day = True
+        self.switched = False
 
     def tick(self, dt, playerR, playerC):
         self.time += dt
@@ -31,7 +33,12 @@ class Track:
             self.done = True
 
         if self.index in self.switchIndices:
+            if not self.switched:
+                self.day = not self.day
+                self.switched = True
 
+        else:
+            self.switched = False
 
         if self.index == len(self.timestamps) - 1:
             prog = (self.time - self.timestamps[self.index])/(self.maxLength-self.timestamps[self.index])

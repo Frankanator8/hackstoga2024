@@ -1,0 +1,10 @@
+use track.day to update background
+
+to render something, use "Renderables", and add it to renderable
+* see "menu.py" "render" and "__init__" function for reference
+
+make it look prettier
+
+add banner images and titles on the front thing
+
+integrate ai hand movement by incrementing game.playerR and game.playerC (0,0 is top left)
