@@ -2,18 +2,21 @@ import math
 
 
 class Track:
-    def __init__(self, boards, timestamps, maxLength):
+    def __init__(self, boards, timestamps, maxLength, switchIndices):
         self.time = 0
         self.boards = boards
         self.timestamps = timestamps
         self.maxLength = maxLength
         self.done = False
         self.index = 0
+        self.switchIndices = switchIndices
+        self.day = True
 
     def reset(self):
         self.time = 0
         self.done = False
         self.index = 0
+        self.day = True
 
     def tick(self, dt, playerR, playerC):
         self.time += dt
@@ -26,6 +29,9 @@ class Track:
 
         if self.time > self.maxLength:
             self.done = True
+
+        if self.index in self.switchIndices:
+
 
         if self.index == len(self.timestamps) - 1:
             prog = (self.time - self.timestamps[self.index])/(self.maxLength-self.timestamps[self.index])
