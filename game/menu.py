@@ -1,5 +1,5 @@
 import loader
-from game.justlikeyou import justlikeyou
+import game.justlikeyou
 from game.odo import odo
 from render.render.image import Image
 
@@ -41,9 +41,11 @@ class Menu:
             if 600 <= mousePos[0] <= 850 and 300 <= mousePos[1] <= 400:
                 print("yes")
                 self.active = False
-                self.game.track = justlikeyou
+                self.game.track = game.justlikeyou.getTrack()
                 self.unrender()
+                self.game.song = "justlikeyou.mp3"
                 self.game.render()
+                
 
 
         self.lastMousePress = mousePressed

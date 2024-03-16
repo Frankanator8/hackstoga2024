@@ -22,6 +22,10 @@ class Game:
         self.track = None
         self.renderer = renderer
         self.time = 0
+        self.song = ""
+        
+        
+
 
     def render(self):
         for r in range(4):
@@ -30,6 +34,8 @@ class Game:
                 self.renderer.add_renderable(self.renderProgs[r][c], f"prog-{r}-{c}")
 
         self.renderer.add_renderable(self.playerImg, "player")
+        pygame.mixer.music.load("assets/" + self.song)
+        pygame.mixer.music.play()
 
     def unrender(self):
         for r in range(4):

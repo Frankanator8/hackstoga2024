@@ -49,9 +49,9 @@ class Track:
 
         else:
             i=1
-            while self.time + 2 > self.timestamps[self.index+i]:
+            while self.time + 2 > self.timestamps[self.index+i]: # if time between is less than 2 seconds
                 i += 1
-                if self.index + i >= len(self.timestamps) - 1:
+                if self.index + i >= len(self.boards) - 1: # if out of bounds
                     break
             for r, row in enumerate(self.boards[self.index]):
                 for c, col in enumerate(row):
