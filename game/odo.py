@@ -24,5 +24,5 @@ boards = [
 
 
 ]
-times = [0, 0.5, 1, 1.5]
+times = [0, 1, 1.9, 2.8, ]
 odo = Track(boards, times, 2, [2])
